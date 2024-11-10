@@ -49,31 +49,31 @@ def parse_args():
     parser.add_argument(
         "--pretrain_mm_mlp_adapter",
         type=str,
-        default="checkpoints/vtimellm-vicuna-v1-5-7b-stage1/mm_projector.bin")
+        default="checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage1/mm_projector.bin")
     parser.add_argument("--stage2",
                         type=str,
-                        default="checkpoints/vtimellm-vicuna-v1-5-7b-stage2")
+                        default="checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage2")
     parser.add_argument("--stage3",
                         type=str,
-                        default="checkpoints/vtimellm-vicuna-v1-5-7b-stage3_5")
-    parser.add_argument("--feat_folder", type=str, default='/home/luoshu/VTimeLLM/dataset/activitynet/feat/val/')
+                        default="checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage3_5")
+    parser.add_argument("--feat_folder", type=str, default='./dataset/activitynet/feat/val/')
 
     parser.add_argument("--ppo_stage",
                         type=str,
-                        default="/home/luoshu/VTimeLLM/output/ppo/ppo_fromv5_exp_2/epoch0_final")
+                        default="./output/ppo/ppo_fromv5_exp_2/epoch0_final")
     parser.add_argument("--data_path",
                         type=str,
-                        default="/home/luoshu/VTimeLLM/data_pre/activity_acption/dataset/val_2.json")
+                        default="./data_pre/activity_acption/dataset/val_2.json")
     parser.add_argument(
         "--annotation_path",
         type=str,
         default=
-        '/home/luoshu/VTimeLLM/data_pre/activity_acption/dataset/val_2.json'
+        './data_pre/activity_acption/dataset/val_2.json'
     )
     parser.add_argument('--log_path',
                         type=str,
-                        default='/home/luoshu/VTimeLLM/output/val/from_v5/')
-    parser.add_argument('--device', type=int, default=3)
+                        default='./output/val/')
+    parser.add_argument('--device', type=int, default=0)
     parser.add_argument('--ppo', action="store_true")
     args = parser.parse_args()
     return args

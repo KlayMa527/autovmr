@@ -40,7 +40,7 @@ deepspeed --include localhost:$gpu_vis --master_port $MASTER_PORT vtimellm/train
     --report_to tensorboard
 
 
-# python /home/luoshu/VTimeLLM/vtimellm/val/val_charades_sta.py \
+# python ./vtimellm/val/val_charades_sta.py \
 #     --stage3 checkpoints/vtimellm-vicuna-v1-5-7b-stage3_5 \
 #     --ppo_stage  output/ppo/ppo_exp_1/epoch0  \
 #     --device 3  \

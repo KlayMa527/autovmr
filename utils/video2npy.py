@@ -47,10 +47,10 @@ class VideoExtractor():
         return id, images
 
 torch.cuda.set_device(2)
-video_dir = '/home/luoshu/VTimeLLM/video'
-save_path = '/home/luoshu/VTimeLLM/video'
+video_dir = './video'
+save_path = './video'
 video_name = os.listdir(video_dir)
-clip_model, _ = clip.load('/home/luoshu/VTimeLLM/checkpoints/clip/ViT-L-14.pt')
+clip_model, _ = clip.load('./checkpoints/clip/ViT-L-14.pt')
 clip_model.eval()
 clip_model = clip_model.cuda()
 video_loader = VideoExtractor(N=100)

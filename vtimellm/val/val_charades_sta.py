@@ -49,18 +49,18 @@ def parse_args():
     parser.add_argument(
         "--pretrain_mm_mlp_adapter",
         type=str,
-        default="checkpoints/vtimellm-vicuna-v1-5-7b-stage1/mm_projector.bin")
+        default="checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage1/mm_projector.bin")
     parser.add_argument("--stage2",
                         type=str,
-                        default="checkpoints/vtimellm-vicuna-v1-5-7b-stage2")
+                        default="checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage2")
     parser.add_argument("--stage3",
                         type=str,
-                        default="/home/luoshu/VTimeLLM/checkpoints/vtimellm-vicuna-v1-5-7b-stage3_5")
-    parser.add_argument("--feat_folder", type=str, default='/home/luoshu/VTimeLLM/dataset/charades_sta/feat/')
+                        default="./checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage3_5")
+    parser.add_argument("--feat_folder", type=str, default='./dataset/charades_sta/feat/')
 
     parser.add_argument("--ppo_stage",
                         type=str,
-                        default="/home/luoshu/VTimeLLM/output/ppo/ppo_fromv5_exp_7/epoch0_100")
+                        default="./checkpoints/ppo_ckp")
     parser.add_argument("--data_path",
                         type=str,
                         default="dataset/charades_sta/Charades_v1_480")
@@ -68,11 +68,11 @@ def parse_args():
         "--annotation_path",
         type=str,
         default=
-        '/home/luoshu/VTimeLLM/dataset/charades_sta/Charades/charades_sta_test.txt'
+        './dataset/charades_sta/Charades/charades_sta_test.txt'
     )
     parser.add_argument('--log_path',
                         type=str,
-                        default='/home/luoshu/VTimeLLM/output/val/from_v5/charades_sta/')
+                        default='./output/val/charades_sta/')
     parser.add_argument('--device', type=int, default=3)
     parser.add_argument('--ppo', action="store_true")
     args = parser.parse_args()

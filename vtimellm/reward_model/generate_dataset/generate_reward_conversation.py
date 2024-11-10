@@ -1,8 +1,8 @@
 import json
 import os
 
-json_data = json.load(open('/home/luoshu/VTimeLLM/data_pre/reward_model_val_v2.json'))
-save_path = '/home/luoshu/VTimeLLM/data_pre/reward_model_val_v2_c_v2.json'
+json_data = json.load(open('./data_pre/reward_model_val_v2.json'))
+save_path = './data_pre/reward_model_val_v2_c_v2.json'
 save_data = []
 
 for data in json_data:

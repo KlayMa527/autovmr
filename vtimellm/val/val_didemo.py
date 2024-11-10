@@ -48,13 +48,13 @@ def parse_args():
     parser.add_argument(
         "--pretrain_mm_mlp_adapter",
         type=str,
-        default="checkpoints/vtimellm-vicuna-v1-5-7b-stage1/mm_projector.bin")
+        default="checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage1/mm_projector.bin")
     parser.add_argument("--stage2",
                         type=str,
-                        default="checkpoints/vtimellm-vicuna-v1-5-7b-stage2")
+                        default="checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage2")
     parser.add_argument("--stage3",
                         type=str,
-                        default="checkpoints/vtimellm-vicuna-v1-5-7b-stage3_1")
+                        default="checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage3_1")
     parser.add_argument("--ppo_stage",
                         type=str,
                         default="output/ppo/ppo_exp_1/epoch0")
@@ -65,11 +65,11 @@ def parse_args():
         "--annotation_path",
         type=str,
         default=
-        '/home/luoshu/VTimeLLM/dataset/charades_sta/Charades/charades_sta_test.txt'
+        './dataset/charades_sta/Charades/charades_sta_test.txt'
     )
     parser.add_argument('--log_path',
                         type=str,
-                        default='/home/luoshu/VTimeLLM/output/val')
+                        default='./output/val_result')
     parser.add_argument('--device', type=int, default=1)
     parser.add_argument('--ppo', type=bool, default=False)
     args = parser.parse_args()

@@ -170,10 +170,10 @@ def cal_se_length(e_gt, s_gt):
     return None
 
 
-json_path = '/home/luoshu/VTimeLLM/data_pre/new_stage3_v5.json'
-save_train_path = '/home/luoshu/VTimeLLM/data_pre/reward_model_data/from_v5/reward_model_train_v_unif.json'
-save_val_path = '/home/luoshu/VTimeLLM/data_pre/reward_model_data/from_v5/reward_model_val_v_unif.json'
-save_miss_id_path = '/home/luoshu/VTimeLLM/data_pre/reward_model_data/from_v5/miss_id_v_unif.json'
+json_path = './data_pre/new_stage3_v5.json'
+save_train_path = './data_pre/reward_model_data/from_v5/reward_model_train_v_unif.json'
+save_val_path = './data_pre/reward_model_data/from_v5/reward_model_val_v_unif.json'
+save_miss_id_path = './data_pre/reward_model_data/from_v5/miss_id_v_unif.json'
 
 json_data = json.load(open(json_path, 'r'))
 
@@ -181,7 +181,7 @@ save_data = []
 miss_id = []
 tiou_list_all = []
 
-name_list = os.listdir('/home/luoshu/VTimeLLM/feat/stage3_clip_feat/')
+name_list = os.listdir('./feat/stage3_clip_feat/')
 for index, item in enumerate(json_data):
     id = item['id']
     if (id + '.npy') not in name_list:

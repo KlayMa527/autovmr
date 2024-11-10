@@ -90,10 +90,10 @@ def cal_se_length(e_gt, s_gt):
     return None
 
 
-json_path = '/home/luoshu/VTimeLLM/data_pre/new_stage3_v5.json'
-save_train_path = '/home/luoshu/VTimeLLM/data_pre/reward_model_data/from_v5/reward_model_train_v1.json'
-save_val_path = '/home/luoshu/VTimeLLM/data_pre/reward_model_data/from_v5/reward_model_val_v1.json'
-save_miss_id_path = '/home/luoshu/VTimeLLM/data_pre/reward_model_data/from_v5/miss_id_v1.json'
+json_path = './data_pre/new_stage3_v5.json'
+save_train_path = './data_pre/reward_model_data/from_v5/reward_model_train_v1.json'
+save_val_path = './data_pre/reward_model_data/from_v5/reward_model_val_v1.json'
+save_miss_id_path = './data_pre/reward_model_data/from_v5/miss_id_v1.json'
 # tiou_ranges = [(-0.25, 0), (0, 0.25), (0.25, 0.5), (0.5, 0.75), (0.75, 1.0)]
 # tiou_ranges = [(0, 0.25), (0.75, 1.0)]
 tiou_ranges_lt = [[(0,0.33),(0.33,0.66), (0.66,1.0)]]
@@ -106,7 +106,7 @@ miss_id = []
 for index, item in enumerate(json_data):
     id = item['id']
     if (id + '.npy'
-        ) not in os.listdir('/home/luoshu/VTimeLLM/feat/stage3_clip_feat/'):
+        ) not in os.listdir('./feat/stage3_clip_feat/'):
         continue
     source = item['source']
     query = remove_punctuation_and_spaces(

@@ -81,12 +81,12 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    args.clip_path = '/home/luoshu/VTimeLLM/checkpoints/clip/ViT-L-14.pt'
-    args.model_base = '/home/luoshu/VTimeLLM/checkpoints/vicuna-7b-v1.5'
-    args.pretrain_mm_mlp_adapter = '/home/luoshu/VTimeLLM/checkpoints/vtimellm-vicuna-v1-5-7b-stage1/mm_projector.bin'
-    args.stage2 = '/home/luoshu/VTimeLLM/checkpoints/vtimellm-vicuna-v1-5-7b-stage2'
-    args.stage3 = '/home/luoshu/VTimeLLM/checkpoints/vtimellm-vicuna-v1-5-7b-stage3'
-    args.video_path = '/home/luoshu/VTimeLLM/dataset/charades_sta/Charades_v1_480/3MSZA.mp4'
+    args.clip_path = './checkpoints/clip/ViT-L-14.pt'
+    args.model_base = './checkpoints/vicuna-7b-v1.5'
+    args.pretrain_mm_mlp_adapter = './checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage1/mm_projector.bin'
+    args.stage2 = './checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage2'
+    args.stage3 = './checkpoints/sft_ckp/vtimellm-vicuna-v1-5-7b-stage_sft'
+    args.video_path = './dataset/charades_sta/Charades_v1_480/3MSZA.mp4'
 
     torch.cuda.set_device(3)
     disable_torch_init()
